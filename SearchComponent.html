@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-x: hidden;
+        }
+
+        @font-face {
+            font-family: 'mona';
+            src: url('/Mona-Sans-Regular.ttf') format(truetype);
+        }
+
+        section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            margin: 10px;
+            background-color: #ffffff;
+            width: 400px;
+            height: 45px;
+            border-radius: 15px;
+            border: 1px solid #5553e3;
+        }
+
+        .search-bar img {
+            width: 22px;
+            height: 22px;
+        }
+
+        .search-bar input {
+            width: 67%;
+            padding-left: 5px;
+            font-family: mona;
+            height: 100%;
+            border: none;
+            outline: none;
+            background-color: transparent;
+        }
+
+        .search-bar button {
+            background-color: #c95000;
+            color: #f3f3f3;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            height: 100%;
+            width: 25%;
+            font-family: mona;
+            font-size: 14px;
+            transition: .5s;
+        }
+
+        .search-bar button:hover {
+            background-color: #4d4acf;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="search-bar">
+            <img src="/lupa.png" alt="Icon lupa">
+            <input type="text" id="searchInput" placeholder="O que você procura?">
+            <button id="searchButton">Pesquisar</button>
+        </div>
+    </section>
+    
+    
+    
+    <script>
+        document.getElementById('searchButton').addEventListener('click', function () {
+            const query = document.getElementById('searchInput').value;
+            alert(`You searched for: ${query}`);
+        });
+    </script>
+</body>
+</html>
