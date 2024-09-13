@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            overflow-x: hidden;
+            list-style: none;
+        }
+
+        @font-face {
+            font-family: 'mona';
+            src: url('/Mona-Sans-Regular.ttf') format(truetype);
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        h1 {
+            font-family: mona;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Página dois</h1>
+        <div id="search-container"></div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('/components/SearchComponent.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('search-container').innerHTML = data;
+                });
+            });
+    </script>
+</body>
+</html>
